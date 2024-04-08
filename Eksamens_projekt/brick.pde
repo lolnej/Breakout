@@ -11,6 +11,6 @@ class Brick {
  }
  
  void render(){
-  rect(x, y, 200, 25); 
+  rect(x, y, 75, 25); 
  }
 }
