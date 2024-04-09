@@ -20,12 +20,26 @@ class Ball{
    
    x=width/2;
    y=790;
-   x+=vx;
-   y+=vy;
+   vx=random(-1,1);
+   vy=random(-3,-5);
   
   
  }
  void Display(){
    circle(x,y,20);
  }
+ void updatePosition(){
+   x+=vx;
+   y+=vy;
+}
+void checkCollisions(){
+  if (x > width-10 || x < 10){
+  vx*=-1;
+  
+}
+  if (y < 10 || y > height-10){
+  vy*=-1;
+  
+}
+}
 }

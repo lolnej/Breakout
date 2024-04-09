@@ -31,15 +31,17 @@ void draw(){
   }
   paddle.Display();
   ball.Display();
+  ball.updatePosition();
+  ball.checkCollisions();
 }
 
 void keyPressed(){
   
   if (key == CODED) {
     if (keyCode == RIGHT) {
-      paddle.x-=10;
-    } else if (keyCode == LEFT) {
       paddle.x+=10;
+    } else if (keyCode == LEFT) {
+      paddle.x-=10;
     } 
   
 }
