@@ -3,11 +3,13 @@ int bWidth, bHeight;
 Brick[][] bricks;
 Paddle paddle;
 Ball ball;
-
+Boolean held;
+Boolean held1;
 void setup(){
   size(800,950);
- 
-
+   held=false;
+   held1=false;
+  
   bWidth = 9;
   bHeight = 3;
   bricks = new Brick[bWidth][bHeight];
@@ -33,16 +35,35 @@ void draw(){
   ball.Display();
   ball.updatePosition();
   ball.checkCollisions();
+  
+  if(held){
+  paddle.x+=10;
+  }
+  if(held1){
+  paddle.x-=10;
+  }
 }
 
 void keyPressed(){
   
   if (key == CODED) {
     if (keyCode == RIGHT) {
-      paddle.x+=10;
+      held=true;
     } else if (keyCode == LEFT) {
-      paddle.x-=10;
+      held1=true;
     } 
   
 }
+}
+
+void keyReleased(){
+if (key == CODED) {
+    if (keyCode == RIGHT) {
+      held=false;
+    } else if (keyCode == LEFT) {
+      held1=false;
+    } 
+  
+}
+
 }
