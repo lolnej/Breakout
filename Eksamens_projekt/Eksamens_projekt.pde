@@ -3,6 +3,7 @@ int bWidth, bHeight;
 Brick[][] bricks;
 Paddle paddle;
 Ball ball;
+Hotbar hotbar;
 Boolean held;
 Boolean held1;
 void setup(){
@@ -15,6 +16,7 @@ void setup(){
   bricks = new Brick[bWidth][bHeight];
   paddle = new Paddle();
   ball = new Ball();
+  hotbar = new Hotbar(20,30);
   
   for (int i = 0; i < bWidth; i++){
     for (int j = 0; j < bHeight; j++){
