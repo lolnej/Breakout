@@ -41,5 +41,10 @@ void checkCollisions(){
   vy*=-1;
   
 }
+  if (ball.y+10 > 800 && ball.y-10 < 820 && ball.x+100 > paddle.x && ball.x-100 < paddle.x+100){
+   vy*=-1;
+  
+  }  
+
 }
 }

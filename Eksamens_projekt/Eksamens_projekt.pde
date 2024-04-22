@@ -38,10 +38,10 @@ void draw(){
   ball.updatePosition();
   ball.checkCollisions();
   
-  if(held){
+  if(held && paddle.x < width-100){
   paddle.x+=10;
   }
-  if(held1){
+  if(held1 && paddle.x > 0){
   paddle.x-=10;
   }
 }
