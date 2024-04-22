@@ -3,7 +3,8 @@ int bWidth, bHeight;
 Brick[][] bricks;
 Paddle paddle;
 Ball ball;
-Hotbar hotbar;
+Hotbar hotbarT;
+Hotbar hotbarB;
 Boolean held;
 Boolean held1;
 void setup(){
@@ -16,7 +17,8 @@ void setup(){
   bricks = new Brick[bWidth][bHeight];
   paddle = new Paddle();
   ball = new Ball();
-  hotbar = new Hotbar(20,30);
+  hotbarT = new Hotbar(-1,0);
+  hotbarB = new Hotbar(-1,height-75);
   
   for (int i = 0; i < bWidth; i++){
     for (int j = 0; j < bHeight; j++){
@@ -35,6 +37,8 @@ void draw(){
   }
   paddle.Display();
   ball.Display();
+  hotbarT.Display();
+  hotbarB.Display();
   ball.updatePosition();
   ball.checkCollisions();
   

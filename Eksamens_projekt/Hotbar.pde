@@ -9,7 +9,9 @@ class Hotbar {
     y = setY;
  }
  
- void render(){
-  rect(x, y, 800, 75); 
+ void Display(){
+  fill(128);
+  rect(x, y, 801, 75); 
+  fill(255);
  }
 }

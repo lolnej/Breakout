@@ -1,13 +1,13 @@
 class Paddle{
- int x,y;
+ int x,w;
  
  Paddle(){
    x=width/2-50;
-   
+   w=100;
  }
  
  void Display(){
- rect(x,800,100,20);
+ rect(x,800,w,20);
  
   }
 }
@@ -37,14 +37,25 @@ void checkCollisions(){
   vx*=-1;
   
 }
-  if (y < 10 || y > height-10){
+  if (y < 10+700 || y > height-10-75){
   vy*=-1;
-  
 }
-  if (ball.y+10 > 800 && ball.y-10 < 820 && ball.x+100 > paddle.x && ball.x-100 < paddle.x+100){
+PVector test = new PVector(x, y).add(new PVector(0, vy));
+PVector testx = new PVector(x, y).add(new PVector(vx, 0));
+ if (testx.y+10 > 800 && testx.y-10 < 820 && testx.x+10 > paddle.x && testx.x-10 < paddle.x+100){
+   if (testx.x > paddle.x+paddle.w/2){
+     x = paddle.x+paddle.w+10;
+     vx++;
+     vx*=-1;
+   } else if (testx.x < paddle.x+paddle.w/2){
+     x = paddle.x-10;
+     vx++;
+     vx*=-1;
+   }
+  
+ } else if (test.y+10 > 800 && test.y-10 < 820 && test.x+10 > paddle.x && test.x-10 < paddle.x+100){
    vy*=-1;
   
-  }  
-
+ }
 }
 }
