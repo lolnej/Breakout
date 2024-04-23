@@ -30,18 +30,26 @@ void setup(){
 void draw(){
    background(0);
   for (int i = 0; i < bWidth; i++){
-    for (int j = 0; j < bHeight; j++){
+    for (int j = 0; j < bHeight; j++){ 
+     if (bricks[i][j].hp > 0){
       bricks[i][j].render();
       
+            if ( ball.y > bricks[i][j].y-10 && ball.y < bricks[i][j].y+35 && ball.x > bricks[i][j].x-10 && ball.x < bricks[i][j].x+85 ){
+        bricks[i][j].hp--;
+        println(bricks[i][j].hp);
+        ball.vy*=-1; 
+      }
+      }
     }
   }
+  
   paddle.Display();
   ball.Display();
   hotbarT.Display();
   hotbarB.Display();
   ball.updatePosition();
   ball.checkCollisions();
-  
+    
   if(held && paddle.x < width-100){
   paddle.x+=10;
   }
