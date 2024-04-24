@@ -14,10 +14,10 @@ class Brick {
  void render(){
   rect(x, y, 75, 25); 
  }
+
  
+ void checkCollision(){
 
  }
  
- void checkCollisions(){
-
- }
+}

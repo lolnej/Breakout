@@ -11,7 +11,7 @@ void setup(){
   size(800,950);
    held=false;
    held1=false;
-  
+ 
   bWidth = 9;
   bHeight = 3;
   bricks = new Brick[bWidth][bHeight];
@@ -30,11 +30,12 @@ void setup(){
 void draw(){
    background(0);
   for (int i = 0; i < bWidth; i++){
-    for (int j = 0; j < bHeight; j++){ 
+    for (int j = 0; j < bHeight; j++){
+      
      if (bricks[i][j].hp > 0){
       bricks[i][j].render();
-      
-            if ( ball.y > bricks[i][j].y-10 && ball.y < bricks[i][j].y+35 && ball.x > bricks[i][j].x-10 && ball.x < bricks[i][j].x+85 ){
+   
+       if ( ball.y > bricks[i][j].y-10 && ball.y < bricks[i][j].y+35 && ball.x > bricks[i][j].x-10 && ball.x < bricks[i][j].x+85 ){
         bricks[i][j].hp--;
         println(bricks[i][j].hp);
         ball.vy*=-1; 
@@ -42,7 +43,6 @@ void draw(){
       }
     }
   }
-  
   paddle.Display();
   ball.Display();
   hotbarT.Display();
