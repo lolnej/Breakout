@@ -15,9 +15,6 @@ class Brick {
   rect(x, y, 75, 25); 
  }
 
- 
- void checkCollision(){
 
- }
  
 }

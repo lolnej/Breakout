@@ -27,7 +27,7 @@ class Ball{
    while (vx < vxi && vx > -vxi){
    vx=random(-2,2);
    }
-   vy=10;
+   vy=random(-3,-5);
    si=1.1;
    sc = 10.5;
    
