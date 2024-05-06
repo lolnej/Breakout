@@ -2,7 +2,7 @@ class Brick {
  //attributes
  float x, y;
  
- int hp = 3;
+ int hp = 1;
  
  //construkter
  Brick(float setX, float setY){
@@ -10,7 +10,11 @@ class Brick {
     y = setY;
  }
  
+ 
  void render(){
   rect(x, y, 75, 25); 
  }
+
+
+ 
 }
