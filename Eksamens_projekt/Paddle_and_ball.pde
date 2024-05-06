@@ -1,5 +1,6 @@
 class Paddle{
  int x,w;
+ float speed;
  
  Paddle(){
    x=width/2-50;
@@ -56,6 +57,7 @@ PVector testx = new PVector(x, y).add(new PVector(vx, 0));
      vx*=-1;
      if (vx*si < sc && vx*si >-sc){
      vx*=si;
+
      }
    } else if (testx.x < paddle.x+paddle.w/2){
      x = paddle.x-10;
