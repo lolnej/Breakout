@@ -1,5 +1,5 @@
 int bWidth, bHeight;
-int points, brokenBricks, brickHits, hp;
+int score, brokenBricks, brickHits, brickhp;
 
 Brick[][] bricks;
 Paddle paddle;
@@ -21,10 +21,10 @@ void setup(){
   ball = new Ball();
   hotbarT = new Hotbar(-1,0);
   hotbarB = new Hotbar(-1,height-75);
-  points = 0;
+  score = 0;
   brokenBricks = 0;
   brickHits = 0;
-  hp = 1;
+  brickhp = 1;
   
   for (int i = 0; i < bWidth; i++){
     for (int j = 0; j < bHeight; j++){
@@ -43,11 +43,10 @@ void draw(){
    
        if ( ball.y > bricks[i][j].y-10 && ball.y < bricks[i][j].y+35 && ball.x > bricks[i][j].x-10 && ball.x < bricks[i][j].x+85 ){
         bricks[i][j].hp--;
-        println(bricks[i][j].hp);
         ball.vy*=-1;
         brickHits++;
-        points++; 
-        brokenBricks=+ brickHits/hp;
+        brokenBricks=+ brickHits/brickhp;
+        score = score + brokenBricks; 
       }
       }
     }
@@ -60,6 +59,7 @@ void draw(){
   ball.checkCollisions();
   points();
   brokenBricks(); 
+  hp();
     
   if(held && paddle.x < width-100){
   paddle.x+=10;

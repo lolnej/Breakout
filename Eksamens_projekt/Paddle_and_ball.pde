@@ -18,9 +18,11 @@ class Ball{
   float si;  //si = speed increase on bouce with paddle
   float vxi; //vxc = used to define interval in which vx can start 
   float sc;  //sc = speed cap for ball
+  float playerhp;
   
  Ball(){
    
+   playerhp = 2.9;
    vxi = 1;
    x=width/2;
    y=790;
@@ -44,9 +46,23 @@ void checkCollisions(){
   vx*=-1;
   
 }
-  if (y < 10+75 || y > height-10-75){
-  vy*=-1;
+  if ( y > height-10-75){ // game end check
+   if (playerhp > 0){
+      playerhp--;
+   }
+    if (playerhp < 0){
+      textSize(120);
+      text("GAME OVER",120,500);
+     } else {
+       ball.x = paddle.x+50;
+       ball.y = 790;
+   }
 }
+
+  if ( y < 10+75 ){
+    vy*=-1;
+  }
+
 //paddle and ball collision
 PVector test = new PVector(x, y).add(new PVector(0, vy));
 PVector testx = new PVector(x, y).add(new PVector(vx, 0));
