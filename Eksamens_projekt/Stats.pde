@@ -16,3 +16,9 @@ void hp (){
   text("hp", 650, 50);
   text(nf(ball.playerhp+0.1,0,0),720,50);
 }
+
+void Speed(){
+  textSize(40);
+  text("Speed", 50,925);
+  text(nf(speed,0,2), 200,925);
+}

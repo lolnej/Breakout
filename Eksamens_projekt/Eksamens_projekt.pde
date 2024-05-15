@@ -1,5 +1,7 @@
 int bWidth, bHeight;
+
 int score, brokenBricks, brickHits, brickhp;
+float speed;
 
 Brick[][] bricks;
 Paddle paddle;
@@ -59,7 +61,11 @@ void draw(){
   ball.checkCollisions();
   points();
   brokenBricks(); 
+
   hp();
+
+  Speed();
+
     
   if(held && paddle.x < width-100){
   paddle.x+=10;
