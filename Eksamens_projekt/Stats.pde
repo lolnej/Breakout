@@ -1,14 +1,20 @@
 void points(){
   textSize(40);
   text("score", 50,50);
-  text(points, 175,50);
+  text(score, 175,50);
   
 }
 
 void brokenBricks(){
   textSize(40);
-  text("Bricks Broken", 250,50);
-  text(brokenBricks, 500,50);
+  text("Bricks Broken", 280,50);
+  text(brokenBricks, 540,50);
+}
+
+void hp (){
+  textSize(40);
+  text("hp", 650, 50);
+  text(nf(ball.playerhp+0.1,0,0),720,50);
 }
 
 void Speed(){
