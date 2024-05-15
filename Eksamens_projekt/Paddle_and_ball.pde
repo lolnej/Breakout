@@ -1,6 +1,5 @@
 class Paddle{
  int x,w;
- float speed;
  
  Paddle(){
    x=width/2-50;
@@ -20,6 +19,7 @@ class Ball{
   float vxi; //vxc = used to define interval in which vx can start 
   float sc;  //sc = speed cap for ball
   float playerhp;
+  float speedBall;
   
  Ball(){
    
@@ -33,6 +33,7 @@ class Ball{
    vy=random(-3,-5);
    si=1.1;
    sc = 10.5;
+   speedBall = 1;
    
  }
  void Display(){
@@ -89,5 +90,7 @@ PVector testx = new PVector(x, y).add(new PVector(vx, 0));
    vy*=si;
     }
  }
+ 
+ speedBall = sqrt(vy*vy+vx*vx);
 }
 }

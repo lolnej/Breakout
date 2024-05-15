@@ -1,7 +1,6 @@
 int bWidth, bHeight;
 
 int score, brokenBricks, brickHits, brickhp;
-float speed;
 
 Brick[][] bricks;
 Paddle paddle;
@@ -63,7 +62,7 @@ void draw(){
   brokenBricks(); 
 
   hp();
-
+  
   Speed();
 
     

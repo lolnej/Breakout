@@ -20,5 +20,5 @@ void hp (){
 void Speed(){
   textSize(40);
   text("Speed", 50,925);
-  text(nf(speed,0,2), 200,925);
+  text(nf(ball.speedBall,0,2), 200,925);
 }
